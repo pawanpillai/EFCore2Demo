@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{1A2D367F-D574-4988-A6DD-FE074947ED45}|Default">
+  <MonoDevelop.Ide.ItemProperties.SamuraiApp.Data FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.SamuraiApp.Domain FirstBuild="True" />
+  <MonoDevelop.Ide.ItemProperties.SomeUI PreferredExecutionTarget="MonoDevelop.Default" FirstBuild="True" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="SamuraiApp.Domain/Battle.cs">
+    <Files>
+      <File FileName="SamuraiApp.Domain/Samurai.cs" Line="8" Column="40" />
+      <File FileName="SamuraiApp.Domain/Quotes.cs" Line="24" Column="29" />
+      <File FileName="SamuraiApp.Domain/Battle.cs" Line="6" Column="22" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Tests FirstBuild="True" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
