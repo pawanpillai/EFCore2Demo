@@ -22,7 +22,7 @@ namespace SomeUI
                     => category == DbLoggerCategory.Database.Command.Name
                     && level == LogLevel.Information, true )});
 
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
         {
             Configuration = configuration;
         }
@@ -47,7 +47,7 @@ namespace SomeUI
             }
 
 
-            InsertSamurai();
+            //InsertSamurai();
 
             app.Run(async (context) =>
             {

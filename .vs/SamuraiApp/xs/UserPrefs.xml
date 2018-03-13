@@ -1,18 +1,16 @@
 ﻿<Properties StartupConfiguration="{1A2D367F-D574-4988-A6DD-FE074947ED45}|Default">
   <MonoDevelop.Ide.ItemProperties.SomeUI PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SomeUI/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SomeUI/Startup.cs">
     <Files>
-      <File FileName="SomeUI/appsettings.json" Line="4" Column="5" />
-      <File FileName="SomeUI/Startup.cs" Line="50" Column="29" />
-      <File FileName="SamuraiApp.Data/SamuraiContext.cs" Line="14" Column="11" />
+      <File FileName="SomeUI/appsettings.json" Line="4" Column="23" />
+      <File FileName="SomeUI/Startup.cs" Line="24" Column="9" />
       <File FileName="SomeUI/Program.cs" Line="23" Column="1" />
+      <File FileName="SamuraiApp.Data/Docker Commands for SQL Server on macOS.txt" Line="59" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/pawanpillai/Projects/SamuraiApp/SomeUI/Startup.cs" relfile="SomeUI/Startup.cs" line="50" column="29" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
