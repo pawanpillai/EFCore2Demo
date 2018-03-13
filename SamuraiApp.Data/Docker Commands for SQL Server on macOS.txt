@@ -1,0 +1,52 @@
+﻿**Docker Commands for SQL Server on macOS**
+
+Link: https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-docker
+
+
+1. Install Docker:
+https://docs.docker.com/engine/installation/
+
+2. Pull the SQL Server 2017 Linux container image from Docker Hub.
+docker pull microsoft/mssql-server-linux:2017-latest
+
+
+3. To create an instance of SQL Server on macOS:
+--docker run --name <SQL_SERVER_INSTANCE_NAME> -p 1431:1433 -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=P@ssw0rd" -e "MSSQL_PID=DEVELOPER" -d microsoft/mssql-server-linux:2017-latest
+Like:
+docker run --name mssqllocaldb -p 1431:1433 -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=P@ssw0rd" -e "MSSQL_PID=DEVELOPER" -d microsoft/mssql-server-linux:2017-latest
+
+4. To view your Docker containers, use the docker ps command.
+docker ps
+
+5. Connect to local instance:
+--docker exec -it <SQL_SERVER_INSTANCE_NAME> "bash"
+docker exec -it mssqllocaldb "bash"
+
+
+6. Once inside the container, connect locally with sqlcmd. 
+--Sqlcmd is not in the path by default, so you have to specify the full path.
+--/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P '<YourNewStrong!Passw0rd>'
+Like:
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'P@ssw0rd'
+
+7. If successful, you should get to a sqlcmd command prompt: 
+1>
+
+8. Write a query to return the name of all of the databases on your server:
+SELECT Name from sys.Databases
+
+9. SQL commands do not executed immediately. You must type GO on a new line to execute SQL statements:
+GO
+
+10. Now write more SQL commands as needed. Done.
+
+11. To end your sqlcmd session, type QUIT.
+
+12. To exit the interactive command-prompt in your container, type 'exit'. 
+Your container continues to run after you exit the interactive bash shell.
+
+13. Now to connect to this SQL Server instance from ASP.NET Core, use following type connection string. 
+Remember to use 'localhost' as server address:
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost,1431;User Id=SA;Password=P@ssw0rd;Database=DockerTestSQL;Trusted_Connection=False;"
+  }

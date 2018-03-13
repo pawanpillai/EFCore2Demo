@@ -23,11 +23,11 @@ namespace SamuraiApp.Data
         public DbSet<Quote> Quotes { get; set; }
         public DbSet<Battle> Battles { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    string connString = "Server = (localdb)\\mssqllocaldb; Database = SamuraiAppData; Trusted_Connection = True";
-        //    optionsBuilder.UseSqlServer(connString);
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            string connString = "Server=localhost,1431;User Id=SA;Password=P@ssw0rd;Database=DockerTestSQL;Trusted_Connection=False;"; //"Server = (localdb)\\mssqllocaldb; Database = SamuraiAppData; Trusted_Connection = True";
+            optionsBuilder.UseSqlServer(connString);
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -35,7 +35,7 @@ namespace SomeUI
                 options => options
                 .UseLoggerFactory(MyConsoleLoggerFactory)
                 .UseSqlServer(
-                    Configuration.GetConnectionString("SamuraiConnection")));
+                    Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,10 +46,25 @@ namespace SomeUI
                 app.UseDeveloperExceptionPage();
             }
 
+
+            InsertSamurai();
+
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
             });
+        }
+
+        private static void InsertSamurai()
+        {
+            var samurai = new Samurai { Name = "Pawan"};
+            DbContextOptions <SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+
+            using (var context = new SamuraiContext(options)){
+                context.Samurais.Add(samurai);
+                context.SaveChanges();
+            }
         }
     }
 }
