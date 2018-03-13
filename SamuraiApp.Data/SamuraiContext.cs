@@ -25,7 +25,7 @@ namespace SamuraiApp.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            string connString = "Server=localhost,1431;User Id=SA;Password=P@ssw0rd;Database=DockerTestSQL;Trusted_Connection=False;"; //"Server = (localdb)\\mssqllocaldb; Database = SamuraiAppData; Trusted_Connection = True";
+            string connString = "Server=localhost,1431;User Id=SA;Password=P@ssw0rd;Database=DockerTestSQL;Trusted_Connection=False;";
             optionsBuilder.UseSqlServer(connString);
         }
 
