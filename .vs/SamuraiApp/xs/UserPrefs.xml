@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{1A2D367F-D574-4988-A6DD-FE074947ED45}|Default">
   <MonoDevelop.Ide.ItemProperties.SomeUI PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="EFCore2Demo Status">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SomeUI/Startup.cs">
     <Files>
-      <File FileName="SomeUI/Startup.cs" Line="50" Column="13" />
-      <File FileName="EFCore2Demo Status" />
+      <File FileName="SomeUI/Startup.cs" Line="50" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -47,7 +47,7 @@ namespace SomeUI
             }
 
 
-            InsertSamurai();
+            //InsertSamurai();
 
             app.Run(async (context) =>
             {
