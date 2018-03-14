@@ -8,6 +8,9 @@ using SamuraiApp.Data;
 using SamuraiApp.Domain;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Console;
+using System;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace SomeUI
 {
@@ -48,11 +51,64 @@ namespace SomeUI
 
 
             //InsertSamurai();
+            //InsertMultipleSamurai();
+            //InsertMultipleDiffObjects();
+            var samurais = SimpleSamuraiQuery();
 
             app.Run(async (context) =>
             {
-                await context.Response.WriteAsync("Hello World!");
+                //await context.Response.WriteAsync("Hello World!");
+                foreach (var samurai in samurais)
+                {   
+                    await context.Response.WriteAsync(samurai.Name + "\n");
+                }
             });
+        }
+
+        private List<Samurai> SimpleSamuraiQuery()
+        {
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+            using (var context = new SamuraiContext(options))
+            {
+               return context.Samurais.ToList();
+            }
+
+
+        }
+
+        private void InsertMultipleDiffObjects()
+        {
+            var samurai4 = new Samurai { Name = "Pawan4" };
+            var battle = new Battle { 
+                Name = "Battle1",
+                StartDate = new DateTime(2018, 12,02),
+                EndDate = new DateTime(2015, 05, 01)
+            };
+
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+
+            using (var context = new SamuraiContext(options))
+            {
+                context.AddRange(samurai4, battle);
+                context.SaveChanges();
+            }
+        }
+
+        private void InsertMultipleSamurai()
+        {
+            var samurai2 = new Samurai { Name = "Pawan2" };
+            var samurai3 = new Samurai { Name = "Pawan3" };
+
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+
+            using (var context = new SamuraiContext(options))
+            {
+                context.Samurais.AddRange(samurai2, samurai3);
+                context.SaveChanges();
+            }
         }
 
         private static void InsertSamurai()
