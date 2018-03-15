@@ -51,18 +51,20 @@ namespace SomeUI
             //dataHandler.InsertMultipleSamurai();
             //dataHandler.InsertMultipleDiffObjects();
             //var samurais = dataHandler.SimpleSamuraiQuery();
-            var samurais = dataHandler.MoreQueries();
+            //var samurais = dataHandler.MoreQueries();
+            //dataHandler.RetrieveAndUpdateSamurai();
+            dataHandler.MultipleDatabaseChanges();
 
             app.Run(async (context) =>
             {
-                //await context.Response.WriteAsync("Hello World!");
+                await context.Response.WriteAsync("Hello World!");
 
                 //foreach (var samurai in samurais)
                 //{   
                 //    await context.Response.WriteAsync(samurai.Name + "\n");
                 //}
 
-                await context.Response.WriteAsync(samurais.Name + "\n");
+                //await context.Response.WriteAsync(samurais.Name + "\n");
             });
         }
 

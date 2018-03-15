@@ -14,6 +14,40 @@ namespace SomeUI
             
         }
 
+
+
+        public void MultipleDatabaseChanges()
+        {
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+            using (var context = new SamuraiContext(options))
+            {
+
+                var samurais = context.Samurais.ToList();
+                foreach(var s in samurais){
+                    s.Name += "0";
+                }
+
+                context.Samurais.Add(new Samurai{ Name = "Pawan50"});
+
+                context.SaveChanges();
+            }
+        }
+
+        public void RetrieveAndUpdateSamurai()
+        {
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+            using (var context = new SamuraiContext(options))
+            {
+
+                var samurai = context.Samurais.FirstOrDefault();
+                //samurai.Name += "0";
+                samurai.Name = samurai.Name.Replace("0", "1");
+                context.SaveChanges();
+            }
+        }
+
         public Samurai MoreQueries()
         {
             DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
