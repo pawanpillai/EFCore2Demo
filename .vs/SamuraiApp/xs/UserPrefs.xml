@@ -1,18 +1,14 @@
 ﻿<Properties StartupConfiguration="{1A2D367F-D574-4988-A6DD-FE074947ED45}|Default">
   <MonoDevelop.Ide.ItemProperties.SomeUI PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SamuraiApp.Domain/Samurai.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="SomeUI/Startup.cs">
     <Files>
-      <File FileName="SomeUI/Startup.cs" Line="66" Column="43" />
-      <File FileName="SamuraiApp.Domain/Battle.cs" Line="11" Column="39" />
-      <File FileName="SamuraiApp.Data/SamuraiContext.cs" Line="22" Column="24" />
-      <File FileName="SamuraiApp.Domain/Samurai.cs" Line="6" Column="18" />
+      <File FileName="SomeUI/DataHandler.cs" Line="23" Column="32" />
+      <File FileName="SomeUI/Startup.cs" Line="54" Column="13" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/pawanpillai/Projects/EFCore2Demo/SomeUI/Startup.cs" relfile="SomeUI/Startup.cs" line="70" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
