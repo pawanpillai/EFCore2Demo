@@ -14,6 +14,37 @@ namespace SomeUI
             
         }
 
+        public void ModifyingRelatedDataWhenNotTracked()
+        {
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+            var context = new SamuraiContext(options);
+            var samurai = context.Samurais.Select(s => new { s.Quotes }).LastOrDefault();
+            var quote = samurai.Quotes[0];
+            quote.Text += "-- more suffix";
+
+            var newContext = new SamuraiContext(options);
+            newContext.Entry(quote).State = EntityState.Modified;
+            newContext.SaveChanges();
+
+        }
+
+
+        public void ModifyingRelatedDataWhenTracked()
+        {
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+            var context = new SamuraiContext(options);
+
+            var samurai = context.Samurais.Select(s => new { s.Quotes }).LastOrDefault();
+
+            samurai.Quotes[0].Text += " - Suffix.";
+
+            context.SaveChanges();
+
+        }
+
+
         public void FilteringWithRelatedData()
         {
             DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();

@@ -60,7 +60,11 @@ namespace SomeUI
             //dataHandler.InsertRelatedDataWhenNotTracked();
             //dataHandler.EagerLoadSamuraiWithQuotes();
             //dataHandler.ProjectSamuraiWithQuotes();
-            dataHandler.FilteringWithRelatedData();
+            //dataHandler.FilteringWithRelatedData();
+            //dataHandler.ModifyingRelatedDataWhenTracked();
+            dataHandler.ModifyingRelatedDataWhenNotTracked();
+
+
 
             app.Run(async (context) =>
             {

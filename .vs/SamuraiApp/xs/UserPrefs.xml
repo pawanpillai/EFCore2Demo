@@ -1,9 +1,10 @@
 ﻿<Properties StartupConfiguration="{1A2D367F-D574-4988-A6DD-FE074947ED45}|Default">
   <MonoDevelop.Ide.ItemProperties.SomeUI PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="SomeUI/DataHandler.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EFCore2Demo Status">
     <Files>
-      <File FileName="SomeUI/DataHandler.cs" Line="27" Column="14" />
-      <File FileName="SomeUI/Startup.cs" Line="61" Column="54" />
+      <File FileName="SomeUI/DataHandler.cs" Line="28" Column="13" />
+      <File FileName="SomeUI/Startup.cs" Line="65" Column="13" />
+      <File FileName="EFCore2Demo Status" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
