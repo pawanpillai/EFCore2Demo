@@ -15,6 +15,87 @@ namespace SomeUI
         }
 
 
+        public void EagerLoadSamuraiWithQuotes()
+        {
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+            using (var context = new SamuraiContext(options))
+            {
+                var samuraiWithQuotes = context.Samurais.Where(s => s.Name == "Pawan50")
+                                               .Include(s => s.Quotes)
+                                               .FirstOrDefault();
+            }
+
+
+        }
+
+        public void InsertRelatedDataWhenNotTracked()
+        {
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+            var context = new SamuraiContext(options);
+
+            var samurai = context.Samurais.LastOrDefault();
+
+            using(var newContext = new SamuraiContext(options)){
+                var quote = new Quote { 
+                    Text = "Life goes on !",
+                    SamuraiId = samurai.Id
+                };
+
+
+                newContext.Quotes.Add(quote);
+                newContext.SaveChanges();
+            }
+        }
+
+        public void InsertRelatedData()
+        {
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+            var context = new SamuraiContext(options);
+
+            var samurai = new Samurai { 
+                Name = "Pawan50",
+                Quotes = new List<Quote>{
+                    new Quote { Text = "Everything will be fine !" }
+                }
+            };
+
+            context.Samurais.Add(samurai);
+            context.SaveChanges();
+
+        }
+
+        public void DeleteWhileTracked()
+        {
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+            var context = new SamuraiContext(options);
+            var samurai = context.Samurais.LastOrDefault();
+
+            context.Samurais.Remove(samurai);
+            context.SaveChanges();
+
+            //alternate... call a stored procedure
+            //context.Database.ExecuteSqlCommand("exec SomeStoredProcedure {0}", samurai.Id);
+
+        }
+
+        public void QueryAndUpdateBattle_Disconnected()
+        {
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+            var context = new SamuraiContext(options);
+            var battle = context.Battles.FirstOrDefault();
+            battle.EndDate = new DateTime(2018, 02, 28);
+
+            using(var newContext = new SamuraiContext(options)){
+                newContext.Battles.Update(battle);
+                newContext.SaveChanges();
+            }
+
+        }
 
         public void MultipleDatabaseChanges()
         {

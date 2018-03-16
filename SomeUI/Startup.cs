@@ -53,7 +53,13 @@ namespace SomeUI
             //var samurais = dataHandler.SimpleSamuraiQuery();
             //var samurais = dataHandler.MoreQueries();
             //dataHandler.RetrieveAndUpdateSamurai();
-            dataHandler.MultipleDatabaseChanges();
+            //dataHandler.MultipleDatabaseChanges();
+            //dataHandler.QueryAndUpdateBattle_Disconnected();
+            //dataHandler.DeleteWhileTracked();
+            //dataHandler.InsertRelatedData();
+            //dataHandler.InsertRelatedDataWhenNotTracked();
+            dataHandler.EagerLoadSamuraiWithQuotes();
+
 
             app.Run(async (context) =>
             {
