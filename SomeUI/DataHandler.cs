@@ -14,6 +14,29 @@ namespace SomeUI
             
         }
 
+        public void FilteringWithRelatedData()
+        {
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+            using (var context = new SamuraiContext(options))
+            {
+                var samuraiWithQuotes = context.Samurais
+                                               .Where(s => s.Quotes.Any(q => q.Text.Contains("fine")))
+                                               .ToList();
+            }
+        }
+
+
+        public void ProjectSamuraiWithQuotes()
+        {
+            DbContextOptions<SamuraiContext> options = new DbContextOptions<SamuraiContext>();
+
+            using (var context = new SamuraiContext(options))
+            {
+                var samuraiWithQuotes = context.Samurais.Select(s => new { s.Id, s.Name, s.Quotes })
+                                               .ToList();
+            }
+        }
 
         public void EagerLoadSamuraiWithQuotes()
         {
@@ -25,8 +48,6 @@ namespace SomeUI
                                                .Include(s => s.Quotes)
                                                .FirstOrDefault();
             }
-
-
         }
 
         public void InsertRelatedDataWhenNotTracked()

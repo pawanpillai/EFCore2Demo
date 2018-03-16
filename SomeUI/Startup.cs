@@ -58,8 +58,9 @@ namespace SomeUI
             //dataHandler.DeleteWhileTracked();
             //dataHandler.InsertRelatedData();
             //dataHandler.InsertRelatedDataWhenNotTracked();
-            dataHandler.EagerLoadSamuraiWithQuotes();
-
+            //dataHandler.EagerLoadSamuraiWithQuotes();
+            //dataHandler.ProjectSamuraiWithQuotes();
+            dataHandler.FilteringWithRelatedData();
 
             app.Run(async (context) =>
             {
